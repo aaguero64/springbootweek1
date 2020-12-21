@@ -26,5 +26,10 @@ public class CarController {
 	public List<String> getCars(){
 		return cars;
 	}
+	@RequestMapping(value="/cars", method=RequestMethod.DELETE)
+	public String deleteCar(@RequestBody String car) {
+		cars.remove(car);
+		return " Succefully Car removed: " + car;
+	}
 
 }
